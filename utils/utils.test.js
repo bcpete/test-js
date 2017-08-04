@@ -20,3 +20,17 @@ it('Should square a number', () => {
     //     throw new Error(`Expected 144, but got ${result}`);
     // }
 });
+
+it('Should async add two numbers', (done) => {
+  utils.asyncAdd(4,3, (sum) => {
+    expect(sum).toBe(7).toBeA('number');
+    done();
+  })
+});
+
+it('Should async square a number', (done) => {
+  utils.asyncSquare(9, (sum) => {
+    expect(sum).toBe(81).toBeA('number');
+    done();
+  });
+});
